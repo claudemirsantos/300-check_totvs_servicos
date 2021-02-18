@@ -1,0 +1,13 @@
+No pacote temos 2 templates, uma para serviços totvs e outra exclusiva para monitoramento de atualização de licenças
+
+* Na template 150-CUSTOM-LS-TOTVS temos uma macro ({$ARQUIVOLS}) que deve ser informada o caminho do arquivo totvslicenseagreement.key 
+este arquivo fica no diretório data\licenseagreement (abaixo do diretório principal do LS)
+O item rodará todo dia as 04 da manha se o checksum do arquivo for igual nas ultimas 2 coletas irá disparar uma trigger
+
+* Na template 150-CUSTOM-SERVICOS-TOTVS tem uma regra de descoberta que roda de 6 em 6 horas (apenas para a criacao de novos itens, caso seja
+alterado)
+Tem que editar o arquivo discovery.totvs.ps1 e colocar os detalhes dos serviços para monitoramento (tem dicas no cabeçalho do documento)
+colocar o check_totvs_servicos.conf no diretorio de configuração (ou no conf do zabbix_agente como userparameter).
+
+Divirtam-se ideias e contribuições mandar para
+claudems@bol.com.br
